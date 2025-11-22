@@ -8,6 +8,11 @@ func main() {
 	fmt.Println("Minimum number is:", min)
 	reversed := reverse(numbers)
 	fmt.Println("Reversed slice is:", reversed)
+	even, odd := evenoddreverse(numbers)
+	fmt.Println("Reversed even numbers:", even)
+	fmt.Println("Reversed odd numbers:", odd)
+	sumeven := sumeven(numbers)
+	fmt.Println("Sum of even numbers is:", sumeven)
 }
 
 
@@ -31,4 +36,28 @@ func reverse(nums []int) []int {
 		reversed[len(nums)-1-i] = n
 	}
 	return reversed
+}
+
+func evenoddreverse(nums []int) ([]int, []int) {
+	even:= []int{}
+	odd:= []int{}
+	
+	for i:= len(nums) - 1; i >=0; i-- {
+		if nums[i]%2 == 0 {
+			even = append(even, nums[i])
+		} else {
+			odd = append(odd, nums[i])
+		}
+	}
+	return even, odd
+}
+
+func sumeven(nums []int) int {
+	sumeven := 0
+	for _, n := range nums {
+		if n%2 == 0 {
+			sumeven += n
+		}
+	}
+	return sumeven
 }
