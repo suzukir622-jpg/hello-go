@@ -13,8 +13,15 @@ func main() {
     sum := a + b
     fmt.Println("Sum is:", sum)
 
+    numbers := []int{1, 2, 3, 4, 5, 6}
+    even, odd := sumEvenOdd(numbers)
+    fmt.Println("Sum of even numbers: ", even)
+    fmt.Println("Sum of odd numbers: ", odd)
+
+
     greet()
-    result()
+    calculate()
+    
 }
 
 func greet() {
@@ -25,9 +32,22 @@ func greet() {
 }
 
 func calculate() {
-    var x int = 7
-    var y int = 2.5
+    var x float64 = 7
+    var y float64 = 2.5
     result := x + y
     fmt.Println("Result is: ", result)
 
+}
+
+func  sumEvenOdd(nums []int) (int, int) {
+    evenSum := 0
+    oddSum := 0
+     for _, num := range nums {
+        if num%2 == 0 {
+            evenSum += num
+        } else {
+                oddSum += num
+            }
+        }
+     return evenSum, oddSum
 }
