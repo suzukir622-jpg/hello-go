@@ -60,6 +60,16 @@ func reverseStrings(strs []string) []string {
 	return reversed
 }
 
+func sumslice(num []int) int {
+	total := 0
+	for _, n := range num {
+		total += n
+	}
+	return total
+} 
+
+
+
 
 
 func main() {
@@ -72,8 +82,8 @@ func main() {
 	slice3 := numbers[2:]
 	fmt.Println(slice3)
 
-	sumslice := sum(numbers)
-	fmt.Println(sumslice)
+	sumsum := sum(numbers)
+	fmt.Println(sumsum)
 
 	avgslice := avg(numbers)
 	fmt.Println(avgslice)
@@ -94,5 +104,8 @@ func main() {
   reversed := reverseStrings(input3)
 	fmt.Println(reversed)
 
+	numbers2 := []int{1, 2, 3, 4, 5}
+  sum := sumslice(numbers2)
+  fmt.Println(sum)
 }
 
